@@ -56,7 +56,7 @@ function predict() {
     house_size == "" ||
     land_size == "" ||
     baths == "" ||
-    beds == ""
+    beds == ""  
   ){
     Swal.fire({
       icon: 'error',
@@ -64,7 +64,7 @@ function predict() {
       text: 'Please fill all the fields!',
     })
   return}
-  xmlhttp.open("POST", `http://127.0.0.1:8000/predict`, true);
+  xmlhttp.open("POST", `https://srilankanhousepricepredictor.herokuapp.com/predict`, true);
   xmlhttp.setRequestHeader("Content-type", "application/json");
   xmlhttp.send(
     `{"house_size":"${house_size}","land_size":"${land_size}","baths":"${baths}","beds":"${beds}","city":"${city}","district":"${district}"}`
@@ -97,7 +97,7 @@ function predict() {
 
 function getLocations() {
   var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("GET", `http://127.0.0.1:8000/getLocations`, true);
+  xmlhttp.open("GET", `https://srilankanhousepricepredictor.herokuapp.com/getLocations`, true);
   xmlhttp.send();
   xmlhttp.onreadystatechange = () => {
     if (xmlhttp.readyState == 4) {
