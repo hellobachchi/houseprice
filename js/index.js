@@ -64,13 +64,19 @@ function predict() {
       text: 'Please fill all the fields!',
     })
   return}
+  Swal.showLoading()
+
   xmlhttp.open("POST", `https://srilankanhousepricepredictor.herokuapp.com/predict`, true);
   xmlhttp.setRequestHeader("Content-type", "application/json");
   xmlhttp.send(
     `{"house_size":"${house_size}","land_size":"${land_size}","baths":"${baths}","beds":"${beds}","city":"${city}","district":"${district}"}`
   );
   xmlhttp.onreadystatechange = () => {
+    
     if (xmlhttp.readyState == 4) {
+    
+      
+      Swal.close();
       var price = parseFloat(xmlhttp.responseText).toFixed(2);
       var formatter = new Intl.NumberFormat("en-US", {
         style: "currency",
