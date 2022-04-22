@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" inline="inline" />
+
+    <title>Sri Lanakan</title>
+  </head>
+  <body>
+    <div class="bg"></div>
+    <div class="bg bg2"></div>
+    <div class="bg bg3"></div>
+    <hgroup>
+      <h1>Sri Lankan House Price Detector</h1>
+      <h3>By Montrex Developers</h3>
+    </hgroup>
+    <form>
+      <div class="group">
+        <input type="number" id="housesize" />
+        <span class="bar"></span>
+        <label for="housesize">House Size (sqft)</label>
+      </div>
+
+      <div class="group">
+        <input type="number" id="landsize" />
+        <span class="bar"></span>
+        <label for="landsize">Land Size (perches)</label>
+      </div>
+      <div class="doubleGroup">
+        <div class="group">
+          <input type="number" id="bed" /> <span class="bar"></span>
+          <label for="bed">No of Bedrooms</label>
+        </div>
+
+        <div class="group">
+          <input type="number" id="bath" />
+          <span class="bar"></span>
+          <label for="bath">No of Bathrooms</label>
+        </div>
+      </div>
+
+      <div class="group">
+        <select title="district" id="district">
+          <option value="">Select a Location</option>
+        </select>
+      </div>
+
+      <div class="group">
+        <select title="city" id="city" disabled="true">
+          <option value="">Select a Location</option>
+        </select>
+      </div>
+
+      <button type="button" class="button buttonBlue">
+        Subscribe
+        <div class="ripples buttonRipples" id="submit">
+          <span class="ripplesCircle"></span>
+        </div>
+      </button>
+    </form>
+    <footer>
+      <p>
+        This is a machine learning model made using a Kaggle dataset, the
+        results of which may not be accurate as it is in the first stage.
+      </p>
+      <p>
+        DataSet Used :<a
+          href="https://www.kaggle.com/lasaljaywardena/sri-lanka-house-prices-dataset"
+          rel="noopener noreferrer"
+          target="_blank"
+          >Kaggle</a
+        >
+        Source Code:
+        <a
+          href="https://github.com/lasaljaywardena/sri-lankan-house-price-detector"
+          rel="noopener noreferrer"
+          target="_blank"
+          >Github</a
+        >
+      </p>
+    </footer>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+    <script src="js/jquery.min.js"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
