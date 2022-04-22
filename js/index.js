@@ -109,7 +109,7 @@ function getLocations() {
     if (xmlhttp.readyState == 4) {
       locations = JSON.parse(xmlhttp.responseText);
       locations_dict = locations;
-      var options = "<option>Select a District</option>";
+      var options = "<option value=''>Select a District</option>";
       for (var district in locations) {
         options += ` 
           <option>${district}</option>  `;
@@ -122,7 +122,7 @@ getLocations();
 submit_button.addEventListener("click", predict);
 
 function set_Cities() {
-  var options = "<option>Select a City</option>";
+  var options = "<option value=''>Select a City</option>";
   var district = district_element.value;
   if (district in locations_dict) {
     var city_options = locations_dict[district];
