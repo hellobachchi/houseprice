@@ -30,6 +30,9 @@ $(window, document, undefined).ready(function () {
     }
   );
 });
+// var api="https://srilankanhousepricepredictor.herokuapp.com"
+var api="http://localhost:8000";
+
 
 var city_element = document.getElementById("city");
 var district_element = document.getElementById("district");
@@ -66,7 +69,7 @@ function predict() {
   return}
   Swal.showLoading()
 
-  xmlhttp.open("POST", `https://srilankanhousepricepredictor.herokuapp.com/predict`, true);
+  xmlhttp.open("POST", `${api}/predict`, true);
   xmlhttp.setRequestHeader("Content-type", "application/json");
   xmlhttp.send(
     `{"house_size":"${house_size}","land_size":"${land_size}","baths":"${baths}","beds":"${beds}","city":"${city}","district":"${district}"}`
@@ -103,7 +106,7 @@ function predict() {
 
 function getLocations() {
   var xmlhttp = new XMLHttpRequest();
-  xmlhttp.open("GET", `https://srilankanhousepricepredictor.herokuapp.com/getLocations`, true);
+  xmlhttp.open("GET", `${api}/getLocations`, true);
   xmlhttp.send();
   xmlhttp.onreadystatechange = () => {
     if (xmlhttp.readyState == 4) {
