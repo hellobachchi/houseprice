@@ -30,8 +30,8 @@ $(window, document, undefined).ready(function () {
     }
   );
 });
-// var api="https://srilankanhousepricepredictor.herokuapp.com"
-var api="http://localhost:8000";
+var api="https://srilankanhousepricepredictor.herokuapp.com"
+// var api="http://localhost:8000";
 
 
 var city_element = document.getElementById("city");
